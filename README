@@ -1,0 +1,15 @@
+Squadron
+========
+
+Requirements
+------------
+
+[Node.js](https://github.com/joyent/node/wiki/Installation), [SQLite3](http://www.sqlite.org/), NPM, and a bunch of packages.
+
+Set up NPM and the packages with the following commands:
+
+    curl http://npmjs.org/install.sh | sudo sh
+    sudo npm install socket.io
+    sudo npm install express
+    sudo npm install underscore
+    sudo npm install sqlite
