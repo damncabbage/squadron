@@ -13,7 +13,6 @@ Set up NPM and the packages with the following commands:
     sudo npm install express
     sudo npm install underscore
     sudo npm install jade
-    sudo npm install sqlite
 
 
 Usage
@@ -22,4 +21,4 @@ Usage
 Run the following from the squadron directory to start the server:
 
     ./squadron.sh      # Start on port 3000.
-	./squadron.sh 5000 # Start on port 5000 instead.
+    ./squadron.sh 5000 # Start on port 5000 instead.
