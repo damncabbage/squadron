@@ -4,9 +4,9 @@ Squadron
 Test a website on a number of remote browsers by broadcasting javascript commands from a single control panel.  
 (This is useful when developing a site that needs to support a number of different mobile devices.)
 
-This project is heavily inspired by Bubbli Co's ["The Mothership" post](http://blog.bubbli.co/post/2834205057/the-mothership).
+This project is heavily inspired by [Bubbli Co's "The Mothership" post](http://blog.bubbli.co/post/2834205057/the-mothership).
 
-Warning: This is a **prototype**. (It runs the javascript, but isn't very friendly, and looks pretty terrible.)
+Warning: This is a **prototype**. (You can run javascript on the remote browsers, but isn't very friendly, and looks pretty terrible.)
 
 
 Requirements
