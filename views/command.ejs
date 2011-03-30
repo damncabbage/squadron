@@ -1,0 +1,67 @@
+
+<form method="get" action="/command/<%= squadron %>">
+	<div id="instructions">
+		<p>Paste the following into the page/site you wish to test:</p>
+<pre>
+&lt;script&gt;
+  var squadronHostName = "<%=hostname %>";
+  var squadronPort = "<%=port %>";
+  var squadronName = "<%=squadron %>";
+&lt;/script&gt;
+&lt;script src="http://<%=host %>/js/client.js"&gt;&lt;/script&gt;
+</pre>
+	</div>
+	<div class="console">
+		<ul id="history"></ul>
+		<p>
+			<textarea id="command" name="command"></textarea>
+			<input id="command-submit" type="submit" value="Send Command" />
+		</p>
+	</div>
+	<ul id="connected"></ul>
+</form>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+	$(document).ready(function(){
+		var histBox = $('#history');
+		var histMsg = function(msg) {
+			$('<li>').html(msg).appendTo(histBox);
+		};
+
+		var socket = new io.Socket(window.location.hostname, {port: window.location.port});
+		socket.connect();
+
+		socket.on('connect', function(){
+			socket.send(JSON.stringify({
+				action: 'THIS-IS-COMMANDER',
+				data: '<%=squadron %>'
+			}));
+		});
+
+        socket.on('disconnect', function(){
+			histMsg('Disconnected; retrying...');
+            socket.connect();
+        });
+
+        socket.on('connect_failed', function(){
+            histMsg('Connection to server failed!');
+            window.setTimeout(socket.connect, 2000);
+        });
+
+        socket.on('message', function(msg){
+			histMsg(msg.action+" "+msg.who+": "+msg.data);
+        });
+
+		$('#command-submit').click(function(e){
+			var data = JSON.stringify({
+				action: 'COMMAND',
+				data: $('#command').val()
+			});		
+			socket.send(data);
+			e.preventDefault();
+		});
+
+
+	});
+</script>
