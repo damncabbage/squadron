@@ -12,14 +12,13 @@ Warning: This is a **prototype**. (You can run javascript on the remote browsers
 Requirements
 ------------
 
-[Node.js](https://github.com/joyent/node/wiki/Installation), [SQLite3](http://www.sqlite.org/), NPM, and a bunch of packages.
+[Node.js](https://github.com/joyent/node/wiki/Installation), [Express](http://expressjs.com/guide.html), [Socket.IO](http://socket.io/) and [EJS](http://embeddedjs.com/).
 
 Set up NPM and the packages with the following commands:
 
     curl http://npmjs.org/install.sh | sudo sh
     sudo npm install socket.io
     sudo npm install express
-    sudo npm install underscore
     sudo npm install ejs
 
 
@@ -28,7 +27,7 @@ Usage
 
 Run the following from the squadron directory to start the server:
 
-    ./squadron.sh      # Start on port 3000.
+    ./squadron.sh      # Start on port 3000, or...
     ./squadron.sh 5000 # Start on port 5000 instead.
 
 
