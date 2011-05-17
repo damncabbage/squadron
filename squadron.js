@@ -24,10 +24,6 @@ app.configure(function(){
 	app.use(express.cookieParser());
 	app.use(express.methodOverride()); // HTTP verb support
 	app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
-	/*app.use(express.compiler({
-		src: __dirname + '/public',
-		enable: ['compass']
-	}));*/
 
 	app.use(app.router);
 });
