@@ -1,0 +1,25 @@
+{
+	"name": "Squadron",
+	"description": "Test a website on a number of remote browsers by broadcasting javascript commands from a single control panel.",
+	"version": "0.1",
+	"keywords": ["javascript", "remote", "testing", "hax"],
+	"maintainers": [{
+		"name": "Rob Howard",
+		"email": "robert.john.howard@gmail.com",
+		"web": "http://robhoward.id.au"
+	}],
+	"licenses": [{
+		"type": "Apache-2.0",
+		"url": "http://www.opensource.org/licenses/Apache-2.0"
+	}],
+	"repositories": [{
+		"type": "git",
+		"url": "http://github.com/damncabbage/squadron.git"
+	}],
+	"dependencies": {
+		"socket.io": ">= 0.7",
+		"express": ">= 2.0",
+		"ejs": ">= 0.4"
+	}
+}
+
